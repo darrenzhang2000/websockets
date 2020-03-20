@@ -18,8 +18,8 @@ io.on('connection', (socket)=>{
         io.sockets.emit('chat', data)
     })
 
-    socket.on('clicking', (data)=>{
+    socket.on('typing', (data)=>{
         console.log('Quince')
-        socket.broadcast('typing', data)
+        socket.broadcast.emit('typing', data)
     })
 })
