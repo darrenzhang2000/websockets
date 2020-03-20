@@ -11,5 +11,10 @@ app.use(express.static('public'))
 //socket setup
 var io = socket(server) //we want socket.io to work on this server
 io.on('connection', (socket)=>{
-    console.log('socket connected')
+    console.log('socket connected', socket.id)
+
+    socket.on('chat', (data)=>{
+        console.log('prickly pear')
+        io.sockets.emit('chat', data)
+    })
 })
