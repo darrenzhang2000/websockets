@@ -17,4 +17,9 @@ io.on('connection', (socket)=>{
         console.log('prickly pear')
         io.sockets.emit('chat', data)
     })
+
+    socket.on('clicking', (data)=>{
+        console.log('Quince')
+        socket.broadcast('typing', data)
+    })
 })
